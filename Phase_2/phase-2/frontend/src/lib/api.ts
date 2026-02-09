@@ -40,12 +40,13 @@ class ApiClient {
         return {} as T;
       }
 
-      const data = await response.json();
-
       if (!response.ok) {
-        throw new Error(data.message || `HTTP error! status: ${response.status}`);
+        const data = await response.json().catch(() => ({}));
+        const errorMessage = data.detail || data.message || `HTTP error! status: ${response.status}`;
+        throw new Error(errorMessage);
       }
 
+      const data = await response.json();
       return data;
     } catch (error) {
       if (error instanceof Error) {
