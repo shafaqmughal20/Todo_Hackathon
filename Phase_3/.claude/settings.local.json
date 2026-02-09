@@ -1,0 +1,15 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(wc -l /mnt/c/Users/DELL/OneDrive/Documents/GitHub/Todo_Hackathon/Phase_2/.claude/skills/*/SKILL.md)",
+      "Bash(find:*)",
+      "Bash(tree:*)",
+      "Bash(.specify/scripts/bash/create-phr.sh:*)",
+      "Bash(git fetch --all --prune)",
+      "Bash(ls:*)",
+      "Bash(.specify/scripts/bash/create-new-feature.sh:*)",
+      "Bash(git config:*)",
+      "Bash(.specify/scripts/bash/setup-plan.sh:*)"
+    ]
+  }
+}
