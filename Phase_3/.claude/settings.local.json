@@ -9,7 +9,14 @@
       "Bash(ls:*)",
       "Bash(.specify/scripts/bash/create-new-feature.sh:*)",
       "Bash(git config:*)",
-      "Bash(.specify/scripts/bash/setup-plan.sh:*)"
+      "Bash(.specify/scripts/bash/setup-plan.sh:*)",
+      "Bash(pkill -f \"uvicorn src.main:app\")",
+      "Bash(uvicorn:*)",
+      "Bash(source:*)",
+      "Bash(python:*)",
+      "Bash(pip show:*)",
+      "Bash(env:*)",
+      "Bash(pip install:*)"
     ]
   }
 }
