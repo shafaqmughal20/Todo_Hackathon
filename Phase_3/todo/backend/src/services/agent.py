@@ -16,7 +16,7 @@ class TodoAgent:
     def __init__(self):
         """Initialize Groq client and load MCP tools."""
         self.client = Groq(api_key=settings.groq_api_key)
-        self.model = "llama-3.3-70b-versatile"
+        self.model = "openai/gpt-oss-20b"
         self.tools = self._load_tools()
         self.max_retries = 3
 

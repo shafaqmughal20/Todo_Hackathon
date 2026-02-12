@@ -70,13 +70,13 @@ npm run build  # Test build locally
 In Hugging Face Space settings, add:
 
 ```env
-DATABASE_URL=postgresql://neondb_owner:npg_5h7zkogQRNsD@ep-broad-dream-aijdftpv-pooler.c-4.us-east-1.aws.neon.tech/neondb?sslmode=require
+DATABASE_URL=postgresql://username:password@host:port/database?sslmode=require
 BETTER_AUTH_SECRET=your-secret-key-min-32-characters-long-change-in-production-please-use-random-generator
 BETTER_AUTH_URL=https://your-space-name.hf.space
 FRONTEND_URL=https://your-space-name.hf.space
 ENVIRONMENT=production
 DEBUG=False
-GROQ_API_KEY=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
+GROQ_API_KEY=YOUR_GROQ_API_KEY_HERE
 ```
 
 #### Step 4: Create Multi-Container Setup
@@ -285,7 +285,7 @@ Phase 2 (without AI chatbot) follows the same process but:
 
 The app currently uses Neon PostgreSQL (already configured):
 ```
-DATABASE_URL=postgresql://neondb_owner:npg_5h7zkogQRNsD@ep-broad-dream-aijdftpv-pooler.c-4.us-east-1.aws.neon.tech/neondb?sslmode=require
+DATABASE_URL=postgresql://username:password@host:port/database?sslmode=require
 ```
 
 **Advantages:**

@@ -362,7 +362,7 @@ NEXT_PUBLIC_API_URL=http://172.31.113.134:8002  # or 8003 for Phase 2
 
 ### Phase 2 Backend (.env)
 ```env
-DATABASE_URL=postgresql://neondb_owner:npg_5h7zkogQRNsD@ep-broad-dream-aijdftpv-pooler.c-4.us-east-1.aws.neon.tech/neondb?sslmode=require
+DATABASE_URL=postgresql://username:password@host:port/database?sslmode=require
 BETTER_AUTH_SECRET=your-secret-key-min-32-characters-long-change-in-production-please-use-random-generator
 BETTER_AUTH_URL=http://localhost:8003
 FRONTEND_URL=http://localhost:3001,http://172.31.113.134:3001
@@ -372,13 +372,13 @@ DEBUG=True
 
 ### Phase 3 Backend (.env)
 ```env
-DATABASE_URL=postgresql://neondb_owner:npg_5h7zkogQRNsD@ep-broad-dream-aijdftpv-pooler.c-4.us-east-1.aws.neon.tech/neondb?sslmode=require
+DATABASE_URL=postgresql://username:password@host:port/database?sslmode=require
 BETTER_AUTH_SECRET=your-secret-key-min-32-characters-long-change-in-production-please-use-random-generator
 BETTER_AUTH_URL=http://localhost:8002
 FRONTEND_URL=http://localhost:3000,http://172.31.113.134:3000
 ENVIRONMENT=development
 DEBUG=True
-GROQ_API_KEY=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
+GROQ_API_KEY=YOUR_GROQ_API_KEY_HERE
 ```
 
 ### Phase 2 Frontend (.env.local)
