@@ -27,7 +27,11 @@ export interface Conversation {
 class ChatService {
   async sendMessage(request: ChatRequest): Promise<ChatResponse> {
     try {
-      const response = await apiClient.post<ChatResponse>('/api/chat', request);
+      const token = localStorage.getItem('token');
+      if (!token) {
+        throw new Error('Not authenticated');
+      }
+      const response = await apiClient.post<ChatResponse>('/api/chat', request, token);
       return response;
     } catch (error) {
       if (error instanceof Error) {
@@ -39,7 +43,11 @@ class ChatService {
 
   async getConversations(): Promise<Conversation[]> {
     try {
-      const response = await apiClient.get<Conversation[]>('/api/chat/conversations');
+      const token = localStorage.getItem('token');
+      if (!token) {
+        throw new Error('Not authenticated');
+      }
+      const response = await apiClient.get<Conversation[]>('/api/chat/conversations', token);
       return response;
     } catch (error) {
       if (error instanceof Error) {
@@ -51,8 +59,13 @@ class ChatService {
 
   async getConversationMessages(conversationId: number): Promise<Message[]> {
     try {
+      const token = localStorage.getItem('token');
+      if (!token) {
+        throw new Error('Not authenticated');
+      }
       const response = await apiClient.get<Message[]>(
-        `/api/chat/conversations/${conversationId}/messages`
+        `/api/chat/conversations/${conversationId}/messages`,
+        token
       );
       return response;
     } catch (error) {

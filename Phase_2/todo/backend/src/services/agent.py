@@ -230,17 +230,20 @@ class TodoAgent:
                         })
 
                         # Add tool call and result to messages for next API call
+                        # Convert tool_call to dict format for Groq SDK 1.0.0
+                        tool_call_dict = {
+                            "id": tool_call.id,
+                            "type": "function",
+                            "function": {
+                                "name": tool_name,
+                                "arguments": tool_call.function.arguments
+                            }
+                        }
+
                         full_messages.append({
                             "role": "assistant",
-                            "content": None,
-                            "tool_calls": [{
-                                "id": tool_call.id,
-                                "type": "function",
-                                "function": {
-                                    "name": tool_name,
-                                    "arguments": json.dumps(tool_args)
-                                }
-                            }]
+                            "content": "",
+                            "tool_calls": [tool_call_dict]
                         })
                         full_messages.append({
                             "role": "tool",
